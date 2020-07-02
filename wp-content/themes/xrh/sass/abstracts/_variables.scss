@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+
+$font-light: "Roboto-Light";
+$font-regular: "Roboto-Regular";
+$font-medium: "Roboto-Medium";
+
+$size-xl: calc(35px + 1.25vw);
+$size-title: calc(35px + 0.95vw);
+$size-subtitle: calc(28px + 0.8vw);
+$size-27: calc(20px + 0.8vw);
+$size-24: calc(18px + 0.55vw);
+$size-20: calc(16px + 0.55vw);
+$size-l: calc(14px + 0.53vw);
+$size-m: calc(12px + 0.45vw);
+
+
+$blue: #00B6FF;
+$dark-blue: #172B4D;
+$gray: #CCCCCC;
+$light-gray: #F2F2F2;
+
+$desktop: 1408px;
+$tablet: 1023px;
+$mobile: 768px;
+$mobile-s: 500px;
+
+$section-padding: calc(40px + 1.7vw);
