@@ -162,6 +162,7 @@ add_action( 'wp_enqueue_scripts', 'xrh_scripts' );
 require_once "inc/bulma-navwalker.php";
 require_once get_template_directory() . '/inc/template-functions.php';
 require_once "blocks/block.php";
+require_once "inc/theme-options.php";
 
 /**
  * Load Jetpack compatibility file.
