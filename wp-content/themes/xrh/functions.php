@@ -50,7 +50,8 @@ if ( ! function_exists( 'xrh_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'xrh' ),
+				'primary' => esc_html__( 'Primary', 'xrh' ),
+				'primary-end' => esc_html__( 'Primary End', 'xrh' ),
 			)
 		);
 
@@ -100,6 +101,9 @@ if ( ! function_exists( 'xrh_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		require_once( 'vendor/autoload.php' );
+		\Carbon_Fields\Carbon_Fields::boot();
 	}
 endif;
 add_action( 'after_setup_theme', 'xrh_setup' );
@@ -155,17 +159,20 @@ function xrh_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'xrh_scripts' );
 
+require_once "inc/bulma-navwalker.php";
+require_once get_template_directory() . '/inc/template-functions.php';
+require_once "blocks/block.php";
 
 /**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+	require_once get_template_directory() . '/inc/jetpack.php';
 }
 
 add_action( 'xrh_show_logo_action', 'xrh_show_logo', 10 );
 if ( ! function_exists( 'xrh_show_logo' ) ) {
-	function fynd_show_logo() {
+	function xrh_show_logo() {
 		$attachment_id = get_theme_mod( 'custom_logo' );
 		$logo          = wp_get_attachment_image_src( $attachment_id, 'full' );
 		$alt           = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );

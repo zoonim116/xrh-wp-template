@@ -38,47 +38,31 @@
 
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            Products
-                        </a>
-
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                VR/AR Applications
-                            </a>
-                            <a class="navbar-item">
-                                Data Portal
-                            </a>
-                            <a class="navbar-item">
-                                External Control
-                            </a>
-                            <a class="navbar-item">
-                                Mobile App
-                            </a>
-                        </div>
-                    </div>
-                    <a class="navbar-item">
-                        Compliance
-                    </a>
-
-                    <a class="navbar-item">
-                        Release Notes
-                    </a>
-
-                    <a class="navbar-item">
-                        FAQ's
-                    </a>
-
-                    <a class="navbar-item">
-                        Contact Us
-                    </a>
+	                <?php wp_nav_menu([
+		                'theme-location' => 'primary',
+		                'depth'		=>	2,
+		                'menu'			=>	'Primary Menu',
+		                'container'		=>	'',
+		                'menu_class'		=>	'',
+		                'items_wrap'		=>	'%3$s',
+		                'walker'		=>	new Bulma_NavWalker(),
+		                'fallback_cb'		=>	'Bulma_NavWalker::fallback'
+	                ]);
+	                ?>
                 </div>
 
                 <div class="navbar-end">
-                    <div class="navbar-item">
-                        <a href="#">For XRHealth Telehealth Services </a>
-                    </div>
+	                <?php wp_nav_menu([
+		                'theme-location' => 'primary-end',
+		                'depth'		=>	1,
+		                'menu'			=>	'Primary End',
+		                'container'		=>	'',
+		                'menu_class'		=>	'',
+		                'items_wrap'		=>	'%3$s',
+		                'walker'		=>	new Bulma_NavWalker(),
+		                'fallback_cb'		=>	'Bulma_NavWalker::fallback'
+	                ]);
+	                ?>
                 </div>
             </div>
         </nav>
