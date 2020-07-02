@@ -299,7 +299,6 @@ function crb_attach_blocks() {
                                 <?php endforeach; ?>
                             </ul>
                             <div class="tab_container">
-
 	                            <?php foreach ($fields['release_notes'] as $index => $tab): ?>
 		                            <?php if ($index == 0): ?>
                                         <h3 class="d_active tab_drawer_heading" rel="tab<?php echo $index;?>"><?php echo $tab['rn_heading']; ?></h3>
@@ -328,4 +327,43 @@ function crb_attach_blocks() {
                 </section>
 			<?php
 		} );
+
+	Block::make( __('FAQ\'s'))
+		->add_fields([
+			Field::make( 'text', 'faq_heading', __( 'Heading' ) ),
+			Field::make( 'complex', 'faq', __( 'FAQ' ) )
+			     ->add_fields([
+				     Field::make( 'text', 'faq_heading_section', __( 'Section' ) ),
+				     Field::make( 'complex', 'tabs', __( '' ) )
+				          ->add_fields([
+					          Field::make( 'text', 'faq_question', __( 'Question' ) ),
+					          Field::make( 'rich_text', 'faq_answer', 'Answer')
+				          ])->set_header_template( '<%- faq_question %>'  )->set_collapsed(true),
+			     ])->set_header_template( '<%- faq_heading_section %>'  )->set_collapsed(true),
+		])->set_render_callback( function ( $fields, $attributes, $inner_blocks ) { ?>
+                <section class="faqs">
+                    <div class="container">
+                        <p class="title"><?php echo esc_html($fields['faq_heading']); ?></p>
+                        <div class="faqs_wrapper">
+                            <?php foreach ($fields['faq'] as $i => $faq): ?>
+                                <div class="faqs-item">
+                                    <p class="faq-title"><?php echo esc_html($faq['faq_heading_section']); ?></p>
+                                    <div class="faqs-accordion">
+                                        <?php foreach ($faq['tabs'] as $index => $tab): ?>
+                                            <div class="tab">
+                                                <input id="tabs<?php echo $i; ?>-<?php echo $index; ?>" type="radio" name="tabs<?php echo $index; ?>">
+                                                <label for="tabs<?php echo $i; ?>-<?php echo $index; ?>"><?php echo esc_html($tab['faq_question']); ?></label>
+                                                <div class="tab-content">
+                                                    <?php echo wpautop($tab['faq_answer']); ?>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </section>
+        <?php
+		    } );
 }
