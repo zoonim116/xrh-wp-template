@@ -147,10 +147,16 @@ add_action( 'widgets_init', 'xrh_widgets_init' );
  * Enqueue scripts and styles.
  */
 function xrh_scripts() {
+	wp_enqueue_style( 'slick', get_template_directory_uri(). '/css/slick.css', array(), _S_VERSION );
+	wp_enqueue_style( 'slick-theme', get_template_directory_uri(). '/css/slick-theme.css', array(), _S_VERSION );
+	wp_enqueue_style( 'custom-scrollbar', get_template_directory_uri(). '/css/jquery.mCustomScrollbar.min.css', array(), _S_VERSION );
+	wp_enqueue_style( 'magnific-popup', get_template_directory_uri(). '/css/magnific-popup.css', array(), _S_VERSION );
 	wp_enqueue_style( 'xrh-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'xrh-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'xrh-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'slick-script', get_template_directory_uri() . '/js/slick.min.js', ['jquery'], _S_VERSION, true );
+	wp_enqueue_script( 'custom-scrollbar-script', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', ['jquery'], _S_VERSION, true );
+	wp_enqueue_script( 'magnific-popup-script', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', ['jquery'], _S_VERSION, true );
 	wp_enqueue_script( 'fynd-script', get_template_directory_uri() . '/js/script.js', ['jquery'], _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

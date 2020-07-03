@@ -40,7 +40,7 @@ function crb_attach_blocks() {
 		     <?php
 	     } );
 
-	Block::make( __( 'Application ' ) )
+	Block::make( __( 'Application' ) )
         ->add_fields([
 	        Field::make( 'text', 'application_block_heading', __( 'Block Heading' ) ),
 	        Field::make( 'complex', 'crb_application_items', __( 'Applications' ) )
@@ -85,8 +85,8 @@ function crb_attach_blocks() {
                                         </div>
                                         <div class="applycation-gallery">
                                             <?php foreach ($application['crb_media_gallery'] as $g_image): ?>
-                                                <a href="#">
-                                                    <?php echo wp_get_attachment_image($g_image, 'full') ?>
+                                                <a href="<?php echo wp_get_attachment_image_src($g_image, 'full')[0]; ?>" class="image-popup-vertical-fit">
+                                                    <?php echo wp_get_attachment_image($g_image) ?>
                                                 </a>
                                             <?php endforeach; ?>
                                         </div>
@@ -133,7 +133,9 @@ function crb_attach_blocks() {
                         <div class="data-portal-list">
                             <?php foreach ($fields['aog_image_gallery'] as $aig): ?>
                                 <div class="data-portal-item">
-	                                <img src="<?php echo wp_get_attachment_image_src($aig['icon'], 'full')[0]; ?>">
+                                    <a href="<?php echo wp_get_attachment_image_src($aig['icon'], 'full')[0]; ?>" class="image-popup-vertical-fit">
+	                                    <img src="<?php echo wp_get_attachment_image_src($aig['icon'], 'full')[0]; ?>">
+                                    </a>
                                     <p><?php echo $aig['title']; ?></p>
                                 </div>
                             <?php endforeach; ?>
@@ -185,8 +187,8 @@ function crb_attach_blocks() {
                         <div class="external-control-list">
 							<?php foreach ($fields['aow_image_gallery'] as $aig): ?>
                                 <div class="external-control-item">
-                                    <a href="">
-									    <?php echo wp_get_attachment_image($aig['icon'], 'full'); ?>
+                                    <a class="image-popup-vertical-fit" href="<?php echo wp_get_attachment_image_src($aig['icon'], 'full')[0]; ?>">
+                                        <img src="<?php echo wp_get_attachment_image_src($aig['icon'], 'full')[0]; ?>">
                                     </a>
                                     <p><?php echo $aig['title']; ?></p>
                                 </div>
@@ -302,7 +304,7 @@ function crb_attach_blocks() {
 	                            <?php foreach ($fields['release_notes'] as $index => $tab): ?>
 		                            <?php if ($index == 0): ?>
                                         <h3 class="d_active tab_drawer_heading" rel="tab<?php echo $index;?>"><?php echo $tab['rn_heading']; ?></h3>
-                                        <div id="tab<?php echo $index;?>" class="tab_content">
+                                        <div id="tab<?php echo $index;?>" class="tab_content mCustomScrollbar">
                                             <?php foreach ($tab['release_notes'] as $trn): ?>
                                                 <p><b><?php echo $trn['rn_version']; ?></b></p>
                                                 <p><?php echo $trn['rn_date']; ?></p>
@@ -311,7 +313,7 @@ function crb_attach_blocks() {
                                         </div>
 		                            <?php else: ?>
                                         <h3 class="tab_drawer_heading" rel="tab<?php echo $index;?>"><?php echo $tab['rn_heading']; ?></h3>
-                                        <div id="tab<?php echo $index;?>" class="tab_content">
+                                        <div id="tab<?php echo $index;?>" class="tab_content mCustomScrollbar">
 	                                        <?php foreach ($tab['release_notes'] as $trn): ?>
                                                 <p><b><?php echo $trn['rn_version']; ?></b></p>
                                                 <p><?php echo $trn['rn_date']; ?></p>

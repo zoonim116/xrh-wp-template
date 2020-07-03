@@ -225,6 +225,7 @@ header {
       img {
         max-height: 16px;
         margin-left: 10px;
+        width: auto;
       }
       p {
         &:first-child {
@@ -234,8 +235,8 @@ header {
     }
     .applycation-gallery {
       img {
-        width: 200px;
-        height: 200px;
+        width: 10vw;
+        height: 10vw;
         object-fit: cover;
         margin-right: 15px;
         box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
@@ -379,6 +380,28 @@ header {
       margin-bottom: 25px;
     }
   }
+  .slick-slide {
+    img {
+      width: 94%;
+      box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    }
+  }
+  .slick-list{padding:0 10% 0 0;}
+}
+
+.slick-dots {
+  bottom: -30px;
+  li {
+    width: 10px;
+    height: 10px;
+    &.slick-active button:before {
+      color: $blue;
+    }
+  }
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+  width: 4px;
 }
 
 .release-notes {
@@ -732,6 +755,18 @@ footer {
 
 .navbar-burger {
   margin-top: 12px;
+}
+
+.contact-form {
+  .icon-wrap {
+    width: 100%;
+    select {
+      width: 100%;
+    }
+    input {
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (min-width: $tablet) {

@@ -10,7 +10,8 @@
         <div class="columns">
             <div class="column is-6 contact-form">
                 <p>Please fill in your info and we’ll reach out as soon as possible.</p>
-                <?php echo do_shortcode('[contact-form-7 id="'.carbon_get_theme_option('crb_cf7').'"]') ?>
+
+                <?php echo do_shortcode('[contact-form-7 id="'. carbon_get_theme_option('crb_cf7').'"]') ?>
             </div>
             <div class="column is-6 contact-info">
                 <div class="contact-info-item">

@@ -5,7 +5,21 @@
         $(".navbar-menu").toggleClass("is-active");
     });
 
-
+    $('.image-popup-vertical-fit').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        mainClass: 'mfp-img-mobile',
+        image: {
+            verticalFit: true
+        }
+    });
+    $('.sertificate-slider').slick({
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false
+    })
 
     $(".tab_content").hide();
     $(".tab_content:first").show();

@@ -11612,6 +11612,7 @@ header .navbar-end a {
 .applications .application-item .application-footer img {
 	max-height: 16px;
 	margin-left: 10px;
+	width: auto;
 }
 
 .applications .application-item .application-footer p:first-child {
@@ -11619,8 +11620,8 @@ header .navbar-end a {
 }
 
 .applications .application-item .applycation-gallery img {
-	width: 200px;
-	height: 200px;
+	width: 10vw;
+	height: 10vw;
 	object-fit: cover;
 	margin-right: 15px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
@@ -11832,6 +11833,32 @@ header .navbar-end a {
 
 .compliance .compliance-content p {
 	margin-bottom: 25px;
+}
+
+.compliance .slick-slide img {
+	width: 94%;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.compliance .slick-list {
+	padding: 0 10% 0 0;
+}
+
+.slick-dots {
+	bottom: -30px;
+}
+
+.slick-dots li {
+	width: 10px;
+	height: 10px;
+}
+
+.slick-dots li.slick-active button:before {
+	color: #00B6FF;
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+	width: 4px;
 }
 
 .release-notes {
@@ -12235,6 +12262,18 @@ footer .social-links img {
 
 .navbar-burger {
 	margin-top: 12px;
+}
+
+.contact-form .icon-wrap {
+	width: 100%;
+}
+
+.contact-form .icon-wrap select {
+	width: 100%;
+}
+
+.contact-form .icon-wrap input {
+	width: 100%;
 }
 
 @media screen and (min-width: 1023px) {
