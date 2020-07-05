@@ -27,12 +27,12 @@
         $(this).closest('.icon-wrap').prev().removeClass('focus');
     });
 
-    $('.site-header .navbar-start a').on('click', function (e) {
+    $('.site-header .navbar-start a, .site-footer .columns a').on('click', function (e) {
         e.preventDefault();
         var selector = $(this).attr('href').replace('#','.');
         if (selector.length > 1) {
             $('html, body').animate({
-                scrollTop: parseInt($(selector).offset().top)
+                scrollTop: parseInt($(selector).offset().top - 50)
             }, 1000);
         }
         return false;

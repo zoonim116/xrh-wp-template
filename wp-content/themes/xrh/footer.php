@@ -19,98 +19,39 @@
                     <p><?php echo get_theme_mod('footer_logo_text') ?></p>
                 </div>
                 <div class="column is-2-tablet is-6-mobile">
-                    <section class="widget widget_nav_menu">
-                        <h2 class="widget-title">Products</h2>
-                        <div>
-                            <ul>
-                                <li>
-                                    <a href="#">VR/AR  Applications</a>
-                                </li>
-                                <li>
-                                    <a href="#">Data Portal</a>
-                                </li>
-                                <li>
-                                    <a href="#">External Control</a>
-                                </li>
-                                <li>
-                                    <a href="#">Mobile App</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+	                <?php dynamic_sidebar( 'sidebar-1' ); ?>
                 </div>
                 <div class="column is-2-tablet is-6-mobile">
-                    <section class="widget widget_nav_menu">
-                        <h2 class="widget-title">Compliance</h2>
-                        <div>
-                            <ul>
-                                <li>
-                                    <a href="#">VR/AR  Applications</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+	                <?php dynamic_sidebar( 'sidebar-2' ); ?>
                 </div>
                 <div class="column is-2-tablet is-6-mobile">
-                    <section class="widget widget_nav_menu">
-                        <h2 class="widget-title">Release Notes</h2>
-                        <div>
-                            <ul>
-                                <li>
-                                    <a href="#">VR Portal</a>
-                                </li>
-                                <li>
-                                    <a href="#">External Control</a>
-                                </li>
-                                <li>
-                                    <a href="#">Data Portal</a>
-                                </li>
-                                <li>
-                                    <a href="#">Mobile App</a>
-                                </li>
-                                <li>
-                                    <a href="#">Developers API</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+	                <?php dynamic_sidebar( 'sidebar-3' ); ?>
                 </div>
                 <div class="column is-2-tablet is-6-mobile">
-                    <section class="widget widget_nav_menu">
-                        <h2 class="widget-title">Support</h2>
-                        <div>
-                            <ul>
-                                <li>
-                                    <a href="#">FAQ</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+	                <?php dynamic_sidebar( 'sidebar-4' ); ?>
                 </div>
             </div>
             <div class="footer-flex">
                 <div>
-                    <p>© 2020 XRHealth. All rights reserved.</p>
+                    <p>© <?php echo date('Y')?> XRHealth. All rights reserved.</p>
                 </div>
                 <div>
-                    <section class="widget widget_nav_menu">
-                        <div>
-                            <ul>
-                                <li>
-                                    <a href="#">Terms of Use</a>
-                                </li>
-                                <li>
-                                    <a href="#">Privacy Policy</a>
-                                </li>
-                                <li>
-                                    <a href="#">Sitemap</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+	                <?php dynamic_sidebar( 'sidebar-5' ); ?>
+<!--                    <section class="widget widget_nav_menu">-->
+<!--                        <div>-->
+<!--                            <ul>-->
+<!--                                <li>-->
+<!--                                    <a href="#">Terms of Use</a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a href="#">Privacy Policy</a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a href="#">Sitemap</a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </section>-->
                 </div>
                 <div class="social-links">
                     <a href="<?php echo carbon_get_theme_option('crb_twitter'); ?>" target="_blank">
