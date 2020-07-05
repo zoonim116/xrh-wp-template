@@ -26,6 +26,10 @@ function crb_attach_theme_options() {
 	         Field::make( 'text', 'crb_additional_info', __('Additional Info')),
 	         Field::make( 'text', 'crb_email3', __('Email')),
 	         Field::make( 'select', 'crb_cf7', __( 'Choose Contact Form 7 form' ) )
-	              ->set_options($cf7_forms)
+	              ->set_options($cf7_forms),
+	         Field::make( 'separator', 'crb_separator_other', __( 'Other settings' ) ),
+	         Field::make( 'text', 'crb_twitter')->set_attribute('type', 'url')->set_attribute('placeholder', 'https://'),
+	         Field::make( 'text', 'crb_facebook')->set_attribute('type', 'url')->set_attribute('placeholder', 'https://'),
+	         Field::make( 'text', 'crb_youtube')->set_attribute('type', 'url')->set_attribute('placeholder', 'https://'),
          ]);
 }

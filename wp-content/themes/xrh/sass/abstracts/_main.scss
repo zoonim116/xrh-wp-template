@@ -14,6 +14,9 @@ header {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
   padding-left: 2.5vw;
   padding-right: 1vw;
+  position: sticky;
+  top: 0;
+  z-index: 25;
   .navbar-item {
     font-family: $font-regular;
     &:hover {
@@ -77,6 +80,8 @@ header {
   padding: 9px 20px;
   text-align: center;
   transition: all 0.2s;
+  border: 0px;
+  min-width: 9vw;
   &:hover {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
     color: $white;
@@ -586,6 +591,11 @@ header {
   padding-top: $section-padding;
   padding-bottom: $section-padding;
   color: #222222;
+  form {
+    p {
+      margin-bottom: 0px;
+    }
+  }
   a {
     color: $blue;
     text-decoration: underline;
@@ -642,6 +652,9 @@ header {
       font-size: calc(10px + 0.3vw);
       font-family: $font-regular;
     }
+  }
+  .btn {
+    margin-top: 30px;
   }
 }
 
@@ -757,14 +770,100 @@ footer {
   margin-top: 12px;
 }
 
+.input:focus, .textarea:focus, .select select:focus, .is-focused.input, .is-focused.textarea, .select select.is-focused, .input:active, .textarea:active, .select select:active, .is-active.input, .is-active.textarea, .select select.is-active {
+  box-shadow: none;
+}
+
 .contact-form {
+  & > p {
+    margin-bottom: calc(20px + 1vw);
+  }
+  .focus {
+    label {
+      color: $blue;
+    }
+  }
+  label {
+    font-size: calc(10px + 0.3vw);
+    font-family: $font-medium;
+    padding-left: 50px;
+    transition: all 0.2s;
+  }
   .icon-wrap {
     width: 100%;
+    position: relative;
+    margin-bottom: calc(20px + 1vw);
+    &:focus {
+      outline: none;
+    }
+    &.select:not(.is-multiple):not(.is-loading)::after {
+      border-color: #cccccc;
+      right: 0;
+      top: 18px;
+    }
+    br {
+      height: 0;
+    }
     select {
       width: 100%;
+      border: 0px;
+      border-bottom: 1px solid #BBBBBB;
+      border-radius: 0;
+      padding: 5px 10px 5px 50px;
+      height: 40px;
+      &:focus {
+        outline: none;
+        border-color: $blue;
+      }
     }
     input {
       width: 100%;
+      border: 0px;
+      border-bottom: 1px solid #BBBBBB;
+      border-radius: 0;
+      padding: 5px 10px 5px 50px;
+      height: 40px;
+      &:focus {
+        outline: none;
+        border-color: $blue;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 1;
+      background-size: auto;
+    }
+    &.select {
+      &::before {
+        background-image: url("images/icon-form-1.svg");
+      }
+    }
+    &.name {
+      &::before {
+        background-image: url("images/icon-form-2.svg");
+      }
+    }
+    &.phone {
+      &::before {
+        background-image: url("images/icon-form-3.svg");
+      }
+    }
+    &.email {
+      &::before {
+        background-image: url("images/icon-form-4.svg");
+      }
+    }
+    &.comments{
+      &::before {
+        background-image: url("images/icon-form-5.svg");
+      }
     }
   }
 }
@@ -883,16 +982,35 @@ footer {
   .faqs .faqs-accordion .tab label::after {
     top: 19px;
   }
-  .contact-us {
-    .contact-info {
-      border-left: 0px;
-    }
-  }
   .hero {
     .headset {
       img {
         display: none;
       }
+    }
+  }
+
+  footer .footer-flex {
+    div {
+      width: 100%;
+      text-align: center;
+    }
+    ul li a {
+      padding: 0 5px;
+    }
+  }
+
+  .contact-us {
+    .contact-info {
+      border-left: 0px;
+    }
+    .flex-contact {
+      img {
+        width: 15px;
+      }
+    }
+    p {
+      margin-bottom: 10px;
     }
   }
 }

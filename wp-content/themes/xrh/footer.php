@@ -15,8 +15,8 @@
         <div class="container">
             <div class="columns is-multiline is-mobile">
                 <div class="column is-4-tablet is-12-mobile footer-logo">
-                    <img src="<?php echo get_template_directory_uri()?>/images/logo-footer.png">
-                    <p>The World's First VR/AR Telehealth</p>
+                    <img src="<?php echo get_theme_mod('footer_logo'); ?>">
+                    <p><?php echo get_theme_mod('footer_logo_text') ?></p>
                 </div>
                 <div class="column is-2-tablet is-6-mobile">
                     <section class="widget widget_nav_menu">
@@ -113,13 +113,13 @@
                     </section>
                 </div>
                 <div class="social-links">
-                    <a href="#" target="_blank">
+                    <a href="<?php echo carbon_get_theme_option('crb_twitter'); ?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri()?>/images/Logo_Twitter.svg">
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="<?php echo carbon_get_theme_option('crb_facebook'); ?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri()?>/images/Logo_Facebook.svg">
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="<?php echo carbon_get_theme_option('crb_youtube'); ?>" target="_blank">
                         <img src="<?php echo get_template_directory_uri()?>/images/Logo_Youtube.svg">
                     </a>
                 </div>

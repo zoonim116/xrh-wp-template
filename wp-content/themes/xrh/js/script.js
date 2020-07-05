@@ -21,6 +21,23 @@
         arrows: false
     })
 
+    $( ".wpcf7-form-control" ).focus(function() {
+        $(this).closest('.icon-wrap').prev().addClass('focus');
+    }).focusout(function() {
+        $(this).closest('.icon-wrap').prev().removeClass('focus');
+    });
+
+    $('.site-header .navbar-start a').on('click', function (e) {
+        e.preventDefault();
+        var selector = $(this).attr('href').replace('#','.');
+        if (selector.length > 1) {
+            $('html, body').animate({
+                scrollTop: parseInt($(selector).offset().top)
+            }, 1000);
+        }
+        return false;
+    });
+
     $(".tab_content").hide();
     $(".tab_content:first").show();
 

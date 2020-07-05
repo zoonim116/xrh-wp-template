@@ -187,3 +187,28 @@ if ( ! function_exists( 'xrh_show_logo' ) ) {
 	}
 }
 
+function xrh_customize_register($wp_customize) {
+	$wp_customize->add_setting('footer_logo', array(
+		'transport'         => 'refresh',
+	));
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_logo', [
+			'label'             => __('Footer logo', 'xrh'),
+			'section'           => 'title_tagline',
+			'settings'          => 'footer_logo',
+		])
+	);
+
+	$wp_customize->add_setting('footer_logo_text', array(
+		'transport'         => 'refresh',
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'footer_logo_text', [
+			'label'             => __('Text under footer logo', 'xrh'),
+			'section'           => 'title_tagline',
+			'settings'          => 'footer_logo_text',
+			'type'              => 'text'
+		])
+	);
+}
+
+add_action('customize_register', 'xrh_customize_register');
+

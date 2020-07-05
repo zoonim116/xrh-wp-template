@@ -4,12 +4,12 @@
 <?php } } else { ?>
     <p>Nothing found</p>
 <?php } ?>
-<section class="contact-us">
+<section class="contact-us" id="contact-us">
     <div class="container">
         <p class="title">Contact Us</p>
         <div class="columns">
             <div class="column is-6 contact-form">
-                <p>Please fill in your info and we’ll reach out as soon as possible.</p>
+                <p><?php _e('Please fill in your info and we’ll reach out as soon as possible', 'xrh'); ?>.</p>
 
                 <?php echo do_shortcode('[contact-form-7 id="'. carbon_get_theme_option('crb_cf7').'"]') ?>
             </div>
