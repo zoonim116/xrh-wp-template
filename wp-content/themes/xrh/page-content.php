@@ -3,11 +3,17 @@
 <?php get_header(); ?>
 <section class="content-page">
 	<div class="container">
-		<h1>Privacy Policy</h1>
+        <?php
+		while ( have_posts() ) :
+			the_post(); ?>
+
+		<h1><?php the_title() ?></h1>
 		<div class="content-part">
-			<p><b>XRHealth Privacy Policy</b></p>
-			<p>Last Revised: December 11, 2018</p>
+            <?php the_content(); ?>
 		</div>
+		<?php
+            endwhile; // End of the loop.
+		?>
 	</div>
 </section>
 <?php get_footer(); ?>

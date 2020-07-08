@@ -104,7 +104,6 @@
 			$class_names = str_replace(array($fa,$show_title_class,"is-right"),"",$class_names);
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 			$this->right_class = $classes;
-
 			if ( ! $args['has_children'] ) {//if doesn't have children
 						if ( ! in_array( 'navbar-divider', $classes ) ) {//if doesnt contains a navbar divider
 							$item_output = $args['before'];//start outputting
@@ -125,11 +124,9 @@
 						$item_output = '<hr class="navbar-divider">';//output navbar divider
 					}
 				$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-			}
-
-			else {//if does have children
+			} else {
 				$item_output = $args['before'];//stat outputting
-				$item_output .= $indent . '<div class="navbar-item has-dropdown is-hoverable" data-target="dropdown"><!-- START DROPDOWN-->' . "\n";
+				$item_output .= $indent . '<div class="navbar-item has-dropdown" data-target="dropdown"><!-- START DROPDOWN-->' . "\n";
 					if ( ! empty( $fa ) ) {//if fa  is not empty
 						$item_output .= '<a' . $class_names . $attributes . '><i class="' . $fa . '"></i>';
 

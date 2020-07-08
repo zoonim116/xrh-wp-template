@@ -11418,6 +11418,7 @@ header .navbar-end a {
 }
 
 .btn {
+	outline: none;
 	font-family: "Roboto-Medium";
 	font-size: calc(14px + 0.53vw);
 	background: #00B6FF;
@@ -11431,6 +11432,10 @@ header .navbar-end a {
 	transition: all 0.2s;
 	border: 0px;
 	min-width: 9vw;
+}
+
+.btn:focus {
+	outline: none;
 }
 
 .btn:hover {
@@ -11480,17 +11485,18 @@ header .navbar-end a {
 
 .hero .headset img {
 	position: absolute;
-	width: 100%;
+	width: 520px;
+	max-width: 100%;
 	top: 37%;
 }
 
 .hero h1 {
-	font-size: calc(35px + 1.25vw);
+	font-size: 44px;
 	font-family: "Roboto-Regular";
 }
 
 .hero .subtitle {
-	font-size: calc(28px + 0.8vw);
+	font-size: 33px;
 	margin-bottom: 3vw;
 	color: white;
 }
@@ -12410,6 +12416,28 @@ footer .social-links img {
 	}
 	.navbar-menu {
 		box-shadow: none;
+	}
+	.navbar-dropdown {
+		display: none;
+	}
+	header .navbar-item.is-active .navbar-dropdown {
+		display: block;
+	}
+	header .navbar-item.is-active .navbar-link::after {
+		transform: rotate(-225deg) !important;
+	}
+	header .navbar-item:hover .navbar-link::after {
+		transform: rotate(-45deg);
+		top: 50%;
+	}
+	header .navbar-start > .navbar-item {
+		padding: 10px;
+	}
+	.navbar-dropdown a.navbar-item {
+		margin-bottom: 0;
+	}
+	.navbar-link:not(.is-arrowless) {
+		padding: 0;
 	}
 }
 

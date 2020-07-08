@@ -353,7 +353,7 @@ function crb_attach_blocks() {
                                     <div class="faqs-accordion">
                                         <?php foreach ($faq['tabs'] as $index => $tab): ?>
                                             <div class="tab">
-                                                <input id="tabs<?php echo $i; ?>-<?php echo $index; ?>" type="radio" name="tabs<?php echo $index; ?>">
+                                                <input id="tabs<?php echo $i; ?>-<?php echo $index; ?>" type="radio" name="tabs<?php echo $i; ?>">
                                                 <label for="tabs<?php echo $i; ?>-<?php echo $index; ?>"><?php echo esc_html($tab['faq_question']); ?></label>
                                                 <div class="tab-content">
                                                     <?php echo wpautop($tab['faq_answer']); ?>

@@ -72,6 +72,7 @@ header {
 }
 
 .btn {
+  outline: none;
   font-family: $font-medium;
   font-size: $size-l;
   background: $blue;
@@ -83,6 +84,9 @@ header {
   transition: all 0.2s;
   border: 0px;
   min-width: 9vw;
+  &:focus {
+    outline: none;
+  }
   &:hover {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
     color: $white;
@@ -129,7 +133,8 @@ header {
     position: relative;
     img {
       position: absolute;
-      width: 100%;
+      width: 520px;
+      max-width: 100%;
       top: 37%;
     }
   }
@@ -912,6 +917,29 @@ footer {
   }
   .navbar-menu {
     box-shadow: none;
+  }
+
+  .navbar-dropdown {
+    display: none;
+  }
+  header .navbar-item.is-active .navbar-dropdown {
+    display: block;
+  }
+  header .navbar-item.is-active .navbar-link::after{
+    transform: rotate(-225deg) !important;
+  }
+  header .navbar-item:hover .navbar-link::after {
+    transform: rotate(-45deg);
+    top: 50%;
+  }
+  header .navbar-start > .navbar-item {
+    padding: 10px;
+  }
+  .navbar-dropdown a.navbar-item {
+    margin-bottom: 0;
+  }
+  .navbar-link:not(.is-arrowless) {
+    padding: 0;
   }
 }
 
